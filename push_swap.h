@@ -6,7 +6,7 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 09:37:20 by frgutier          #+#    #+#             */
-/*   Updated: 2023/03/05 12:45:07 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/03/07 09:47:33 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,24 @@
 # define PUSH_SWAP_H
 # include	"libft/libft.h"
 # include   <stdio.h>
+
 /*
-**  Lista enlazada para guardar los datos de entrada y ordenarlos
+**  Lista doblemente enlazada
 */
-typedef struct node
+typedef struct s_list
 {
-    int				num;
-    struct node		*next;
-}					t_node;
+	int				num;
+	int				index;
+	struct s_list	*next;
+	struct s_list	*prev;
+}				t_list;
 
-typedef struct list
-{
-    t_node  *head;
-}               t_list;
-
-t_node  *create_node(t_node **init, int num);
-void    destroy_node(t_node *node);
-void    prepend_node(t_list *list, int num);
-void    append_node(t_list *list, int num);
+/*
+**  Funciones de la lista
+*/
+void    list_prepend(t_list **stack, t_list *news);
+void    list_append(t_list **stack, t_list *news);
+t_list	*list_new(int num);
+t_list    *list_last(t_list *stack);
 
 #endif
