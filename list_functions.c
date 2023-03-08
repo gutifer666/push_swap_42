@@ -6,7 +6,7 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 09:20:22 by frgutier          #+#    #+#             */
-/*   Updated: 2023/03/07 10:18:44 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/03/08 09:41:48 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void    list_prepend(t_list **stack, t_list *news)
 /*
 **  Añade un elemento al final de la lista
 */
-void    list_append(t_list **stack, t_list *news)
+void	list_append(t_list **stack, t_list *news)
 {
 	t_list	*tmp;
 
@@ -58,7 +58,7 @@ void    list_append(t_list **stack, t_list *news)
 /*
 **  Crea un nuevo elemento de la lista
 */
-t_list	*list_new(int num)
+t_list	*new_node(int num)
 {
 	t_list	*stack;
 

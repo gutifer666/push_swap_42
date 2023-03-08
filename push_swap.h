@@ -6,7 +6,7 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 09:37:20 by frgutier          #+#    #+#             */
-/*   Updated: 2023/03/07 09:47:33 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/03/08 09:43:36 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,11 @@ typedef struct s_list
 */
 void    list_prepend(t_list **stack, t_list *news);
 void    list_append(t_list **stack, t_list *news);
-t_list	*list_new(int num);
+t_list	*new_node(int num);
 t_list    *list_last(t_list *stack);
+/*
+**  Funciones de indexación
+*/
+void	assign_ascending_index(t_list **stack);
 
 #endif
