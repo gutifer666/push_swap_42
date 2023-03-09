@@ -6,7 +6,7 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 09:37:20 by frgutier          #+#    #+#             */
-/*   Updated: 2023/03/09 09:20:43 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/03/09 09:58:45 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,14 @@ t_list	*list_last(t_list *stack);
 */
 void	assign_ascending_index(t_list **stack);
 void	reset_index(t_list **stack);
+
+/*
+** Operaciones del push_swap
+*/
+
+// swap
+void	sa(t_list **stack_a);
+void	sb(t_list **stack_b);
+void	ss(t_list **stack_a, t_list **stack_b);
 
 #endif
