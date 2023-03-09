@@ -6,7 +6,7 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 09:11:28 by frgutier          #+#    #+#             */
-/*   Updated: 2023/03/08 09:48:53 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/03/09 09:04:06 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,9 @@ static	t_list	*get_min_node(t_list **stack)
 	return (min_node);
 }
 
+/*
+**  Asigna índices a los nodos de forma ascendente
+*/
 void	assign_ascending_index(t_list **stack)
 {
 	t_list	*list;
@@ -51,4 +54,20 @@ void	assign_ascending_index(t_list **stack)
 		list->index = index++;
 		list = get_min_node(stack);
 	}	
+}
+
+/*
+**  Resetea los índices de la lista
+*/
+void	reset_index(t_list **stack)
+{
+	t_list	*list;
+
+	list = *stack;
+	while (list)
+	{
+		list->index = -1;
+		list = list->next;
+	}
+	assign_ascending_index(stack);
 }

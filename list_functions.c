@@ -6,7 +6,7 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 09:20:22 by frgutier          #+#    #+#             */
-/*   Updated: 2023/03/08 09:41:48 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/03/09 08:48:24 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 /*
 **  Añade un elemento al principio de la lista
 */
-void    list_prepend(t_list **stack, t_list *news)
+void	list_prepend(t_list **stack, t_list *news)
 {
 	if (!stack || !news)
 		return ;

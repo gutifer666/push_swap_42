@@ -6,7 +6,7 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 09:36:57 by frgutier          #+#    #+#             */
-/*   Updated: 2023/03/08 09:51:36 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/03/09 09:04:32 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,10 +57,11 @@ int	main(void)
 	a_stack = NULL;
 	b_stack = NULL;
 	init_stack(&a_stack);
+	print_stack(a_stack);
+	assign_ascending_index(&a_stack);
 	printf("Último elemento: %d\n",content(list_last(a_stack)));
 	print_stack(a_stack);
-	list_prepend(&a_stack, new_node(4));
-	assign_ascending_index(&a_stack);
+	reset_index(&a_stack);
 	print_stack(a_stack);
 	clear_stack(&a_stack);
 	clear_stack(&b_stack);
