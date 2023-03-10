@@ -6,7 +6,7 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 09:36:57 by frgutier          #+#    #+#             */
-/*   Updated: 2023/03/09 10:26:23 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/03/10 08:23:07 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,11 @@ int	main(void)
 	print_stack(a_stack);
 	ft_printf("Stack B\n");
 	reset_index(&b_stack);
+	print_stack(b_stack);
+	rr(&a_stack, &b_stack);
+	ft_printf("Stack A\n");
+	print_stack(a_stack);
+	ft_printf("Stack B\n");
 	print_stack(b_stack);
 	clear_stack(&a_stack);
 	clear_stack(&b_stack);

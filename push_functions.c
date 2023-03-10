@@ -6,7 +6,7 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 10:09:39 by frgutier          #+#    #+#             */
-/*   Updated: 2023/03/09 10:17:07 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/03/10 07:51:53 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,3 @@ void	pb(t_list **stack_a, t_list **stack_b)
 	push(stack_b, stack_a);
 	ft_printf("pb\n");
 }
-
