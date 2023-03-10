@@ -6,7 +6,7 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 09:36:57 by frgutier          #+#    #+#             */
-/*   Updated: 2023/03/10 09:33:39 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/03/10 10:07:19 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,9 @@ static	void	clear_stack(t_list **stack)
 
 static	int	init_stack(t_list **a_stack)
 {
-	for (int i = 3; i > 0; i--)
-	{
-		list_append(a_stack, new_node(i));
-	}
+	list_append(a_stack, new_node(7));
+	list_append(a_stack, new_node(3));
+	list_append(a_stack, new_node(2));
 	return (1);
 }
 
@@ -60,17 +59,9 @@ int	main(void)
 	assign_ascending_index(&a_stack);
 	ft_printf("Stack A\n");
 	print_stack(a_stack);
-	ra(&a_stack);
-	ft_printf("Stack A after a ra \n");
+	sort_three_elements(&a_stack);
+	ft_printf("Stack A\n");
 	print_stack(a_stack);
-	sa(&a_stack);
-	ft_printf("Stack A after a sa \n");
-	print_stack(a_stack);
-
-	if (is_sorted(&a_stack) == 1)
-		ft_printf("Stack A is sorted\n");
-	else
-		ft_printf("Stack A is not sorted\n");
 	
 	clear_stack(&a_stack);
 	clear_stack(&b_stack);
