@@ -6,7 +6,7 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 09:37:20 by frgutier          #+#    #+#             */
-/*   Updated: 2023/03/10 10:01:01 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/03/11 08:50:25 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,8 @@ void	rrr(t_list **stack_a, t_list **stack_b);
 /*
 **  Utilidades de ordenación
 */
-int	is_sorted(t_list **stack);
+int		is_sorted(t_list **stack);
+int		is_order(t_list **stack, int size);
 
 /*
 **  Funciones de ordenación simple
