@@ -6,7 +6,7 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 07:57:49 by frgutier          #+#    #+#             */
-/*   Updated: 2023/03/10 08:18:30 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/03/11 10:43:36 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,34 @@ void	rr(t_list **stack_a, t_list **stack_b)
 	rotate(stack_a);
 	rotate(stack_b);
 	ft_printf("rr\n");
+}
+
+/*
+**  Encuentra el nodo más pequeño en una lista enlazada
+**  y lo mueve a la cabeza de la lista
+*/
+void	rotate_min_node_to_head(t_list **stack, int size)
+{
+	int	i;
+
+	i = 0;
+	while ((*stack)->index != 0)
+	{
+		rotate(stack);
+		i++;
+	}
+	if ((i > (size / 2)))
+	{
+		if (size == 5 && i == 3)
+			ft_printf("rra\n");
+		ft_printf("rra\n");
+	}
+	else
+	{
+		while (i > 0)
+		{
+			ft_printf("ra\n");
+			i--;
+		}
+	}
 }

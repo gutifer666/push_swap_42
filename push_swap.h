@@ -6,7 +6,7 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 09:37:20 by frgutier          #+#    #+#             */
-/*   Updated: 2023/03/11 08:50:25 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/03/11 10:46:07 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ void	rotate(t_list **stack);
 void	ra(t_list **stack_a);
 void	rb(t_list **stack_b);
 void	rr(t_list **stack_a, t_list **stack_b);
+void	rotate_min_node_to_head(t_list **stack, int size);
 
 // reverse rotate
 void	reverse_rotate(t_list **stack);
@@ -74,4 +75,5 @@ int		is_order(t_list **stack, int size);
 **  Funciones de ordenación simple
 */
 void	sort_three_elements(t_list **stack);
+void	sort_four_elements(t_list **a_stack, t_list **b_stack);
 #endif

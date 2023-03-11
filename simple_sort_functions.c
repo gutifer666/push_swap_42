@@ -6,7 +6,7 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 09:44:23 by frgutier          #+#    #+#             */
-/*   Updated: 2023/03/10 10:01:44 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/03/11 10:48:25 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,15 @@ void	sort_three_elements(t_list **stack)
 		else
 			rra(stack);
 	}
+}
+
+void	sort_four_elements(t_list **a_stack, t_list **b_stack)
+{
+	if (is_order(a_stack, 4) == 1)
+		return ;
+	rotate_min_node_to_head(a_stack, 4);
+	pb(a_stack, b_stack);
+	reset_index(a_stack);
+	sort_three_elements(a_stack);
+	pa(a_stack, b_stack);
 }
