@@ -6,7 +6,7 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 09:36:57 by frgutier          #+#    #+#             */
-/*   Updated: 2023/03/11 10:49:26 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/03/13 09:40:25 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,10 @@ static	void	clear_stack(t_list **stack)
 static	int	init_stack(t_list **a_stack)
 {
 	list_append(a_stack, new_node(7));
-	list_append(a_stack, new_node(3));
-	list_append(a_stack, new_node(2));
+	list_append(a_stack, new_node(6));
+	list_append(a_stack, new_node(5));
 	list_append(a_stack, new_node(4));
+	list_append(a_stack, new_node(3));
 	return (1);
 }
 
@@ -57,10 +58,11 @@ int	main(void)
 	a_stack = NULL;
 	b_stack = NULL;
 	init_stack(&a_stack);
+	ft_printf("%d\n", list_size(a_stack));
 	assign_ascending_index(&a_stack);
 	ft_printf("Stack A\n");
 	print_stack(a_stack);
-	sort_four_elements(&a_stack, &b_stack);
+	sort_small_stack(&a_stack, &b_stack);
 	ft_printf("Stack A\n");
 	reset_index(&a_stack);
 	print_stack(a_stack);

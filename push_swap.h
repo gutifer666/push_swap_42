@@ -6,7 +6,7 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 09:37:20 by frgutier          #+#    #+#             */
-/*   Updated: 2023/03/11 10:46:07 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/03/13 09:34:48 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	list_prepend(t_list **stack, t_list *news);
 void	list_append(t_list **stack, t_list *news);
 t_list	*new_node(int num);
 t_list	*list_last(t_list *stack);
+int		list_size(t_list *stack);
 /*
 **  Funciones de indexación
 */
@@ -72,8 +73,10 @@ int		is_sorted(t_list **stack);
 int		is_order(t_list **stack, int size);
 
 /*
-**  Funciones de ordenación simple
+**  Funciones de ordenación de stacks pequeños
 */
 void	sort_three_elements(t_list **stack);
 void	sort_four_elements(t_list **a_stack, t_list **b_stack);
+void	sort_five_elements(t_list **a_stack, t_list **b_stack);
+void	sort_small_stack(t_list **a_stack, t_list **b_stack);
 #endif

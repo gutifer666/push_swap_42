@@ -6,7 +6,7 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 09:20:22 by frgutier          #+#    #+#             */
-/*   Updated: 2023/03/09 08:48:24 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/03/13 09:24:29 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,4 +82,17 @@ t_list	*list_last(t_list *stack)
 	while (stack->next)
 		stack = stack->next;
 	return (stack);
+}
+
+int	list_size(t_list *stack)
+{
+	int	i;
+
+	i = 0;
+	while (stack)
+	{
+		stack = stack->next;
+		i++;
+	}
+	return (i);
 }
