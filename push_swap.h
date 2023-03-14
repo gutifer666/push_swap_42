@@ -6,7 +6,7 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 09:37:20 by frgutier          #+#    #+#             */
-/*   Updated: 2023/03/13 09:34:48 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/03/14 09:48:28 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,4 +79,9 @@ void	sort_three_elements(t_list **stack);
 void	sort_four_elements(t_list **a_stack, t_list **b_stack);
 void	sort_five_elements(t_list **a_stack, t_list **b_stack);
 void	sort_small_stack(t_list **a_stack, t_list **b_stack);
+
+/*
+**  Funciones de ordenación de stacks grandes
+*/
+void	radix_sort(t_list **a_stack, t_list **b_stack);
 #endif

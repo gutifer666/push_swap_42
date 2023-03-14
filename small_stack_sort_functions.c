@@ -6,7 +6,7 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 09:17:20 by frgutier          #+#    #+#             */
-/*   Updated: 2023/03/13 09:41:49 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/03/14 09:11:54 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ void	sort_small_stack(t_list **a_stack, t_list **b_stack)
 	int	size;
 
 	size = list_size(*a_stack);
-
 	if (size == 3)
 		sort_three_elements(a_stack);
 	else if (size == 4)
@@ -62,4 +61,3 @@ void	sort_small_stack(t_list **a_stack, t_list **b_stack)
 	else
 		sort_five_elements(a_stack, b_stack);
 }
-

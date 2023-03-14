@@ -6,7 +6,7 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 09:36:57 by frgutier          #+#    #+#             */
-/*   Updated: 2023/03/13 09:40:25 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/03/14 09:49:07 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ static	int	init_stack(t_list **a_stack)
 	list_append(a_stack, new_node(5));
 	list_append(a_stack, new_node(4));
 	list_append(a_stack, new_node(3));
+	list_append(a_stack, new_node(2));
 	return (1);
 }
 
@@ -62,7 +63,7 @@ int	main(void)
 	assign_ascending_index(&a_stack);
 	ft_printf("Stack A\n");
 	print_stack(a_stack);
-	sort_small_stack(&a_stack, &b_stack);
+	radix_sort(&a_stack, &b_stack);
 	ft_printf("Stack A\n");
 	reset_index(&a_stack);
 	print_stack(a_stack);
