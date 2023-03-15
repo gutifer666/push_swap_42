@@ -6,7 +6,7 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 08:20:03 by frgutier          #+#    #+#             */
-/*   Updated: 2023/03/03 10:12:16 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/03/15 10:04:21 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdarg.h>
+# include <limits.h>
 /*
 typedef struct s_list
 {
