@@ -6,7 +6,7 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 09:20:25 by frgutier          #+#    #+#             */
-/*   Updated: 2023/03/14 09:54:14 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/03/15 08:15:43 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 */
 static	int	get_max_bit_length(t_list **stack)
 {
-	t_list	*list; 
+	t_list	*list;
 	int		max_value;
 	int		max_bit_length;
 
@@ -35,6 +35,7 @@ static	int	get_max_bit_length(t_list **stack)
 		max_bit_length++;
 	return (max_bit_length);
 }
+
 /*
 El algoritmo funciona separando los números en la lista en dígitos individuales
 y ordenándolos según cada dígito. En esta implementación, se itera a través 
@@ -43,8 +44,8 @@ En cada iteración, se itera a través de cada número en la lista y se comprueb
 el valor del bit en esa posición. Si el bit es 0, se empuja el número a otra 
 lista enlazada (b_stack) usando la función pb. Si el bit es 1, 
 se rota la lista original enlazada (a_stack) usando la función ra.
-Después de ordenar por un bit, se mueven los elementos de la lista enlazada b_stack
-a la lista original enlazada a_stack utilizando la función pa. 
+Después de ordenar por un bit, se mueven los elementos de la lista enlazada 
+b_stack a la lista original enlazada a_stack utilizando la función pa. 
 Luego, se procede a ordenar por el siguiente bit hasta que se hayan ordenado
 todos los bits.
 */
@@ -75,4 +76,3 @@ void	radix_sort(t_list **a_stack, t_list **b_stack)
 			pa(a_stack, b_stack);
 	}
 }
-
