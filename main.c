@@ -6,11 +6,31 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 09:36:57 by frgutier          #+#    #+#             */
-/*   Updated: 2023/03/17 08:05:36 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/03/17 08:35:50 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include    "push_swap.h"
+
+static int	check_duplicate_values(t_list *head)
+{
+	int		current_value;
+	t_list	*comparison_node;
+
+	while (head && head->next)
+	{
+		current_value = head->num;
+		comparison_node = head;
+		while (comparison_node->next)
+		{
+			comparison_node = comparison_node->next;
+			if (comparison_node->num == current_value)
+				return (-1);
+		}
+		head = head->next;
+	}
+	return (1);
+}
 
 void	free_split(char **split)
 {
@@ -94,9 +114,15 @@ int	main(int argc, char **argv)
 	stack_a = NULL;
 	stack_b = NULL;
 	init_stack(argc, argv, &stack_a);
-	assign_ascending_index(&stack_a);
-	ft_printf("stack_a:\n");
-	print_stack(stack_a);
+	if (check_duplicate_values(stack_a) == -1)
+	{
+		ft_putstr_fd("Error\n", 2);
+		return (1);
+	}else
+	{
+		print_stack(stack_a);
+	}
+
 
 	clear_stack(&stack_a);
 	clear_stack(&stack_b);
