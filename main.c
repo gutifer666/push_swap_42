@@ -6,11 +6,25 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 09:36:57 by frgutier          #+#    #+#             */
-/*   Updated: 2023/03/15 10:19:51 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/03/17 08:05:36 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include    "push_swap.h"
+
+void	free_split(char **split)
+{
+	int	i;
+
+	i = 0;
+	while (split[i])
+	{
+		free(split[i]);
+		split[i] = NULL;
+		i++;
+	}
+	free(split);
+}
 
 static	void	clear_stack(t_list **stack)
 {
@@ -42,7 +56,7 @@ static int	init_stack(int ac, char **av, t_list **a_stack)
 			list_append(a_stack, new_node(ft_atoi(split[j])));
 			j++;
 		}
-		//free_split(split);
+		free_split(split);
 		i++;
 	}
 	return (1);
@@ -65,21 +79,7 @@ static	void	print_stack(t_list *stack)
 	print_stack(stack->next);
 	printf("\n");
 }
-/*
-void	free_split(char **split)
-{
-	int	i;
 
-	i = 0;
-	while (split[i])
-	{
-		free(split[i]);
-		split[i] = NULL;
-		i++;
-	}
-	free(split);
-}
-*/
 
 int	main(int argc, char **argv)
 {
