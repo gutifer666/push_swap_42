@@ -6,7 +6,7 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 09:36:57 by frgutier          #+#    #+#             */
-/*   Updated: 2023/03/17 08:35:50 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/03/17 09:03:29 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,25 +81,6 @@ static int	init_stack(int ac, char **av, t_list **a_stack)
 	}
 	return (1);
 }
-static	int	content(t_list *stack)
-{
-	return (stack->num);
-}
-
-static	int	index(t_list *stack)
-{
-	return (stack->index);
-}
-
-static	void	print_stack(t_list *stack)
-{
-	if (!stack)
-		return ;
-	printf("%d -> %d\n", content(stack), index(stack));
-	print_stack(stack->next);
-	printf("\n");
-}
-
 
 int	main(int argc, char **argv)
 {
@@ -113,16 +94,27 @@ int	main(int argc, char **argv)
 	}
 	stack_a = NULL;
 	stack_b = NULL;
-	init_stack(argc, argv, &stack_a);
-	if (check_duplicate_values(stack_a) == -1)
+	if (init_stack(argc, argv, &stack_a) == 0)
 	{
-		ft_putstr_fd("Error\n", 2);
+		ft_putstr_fd("Error\n", STDERR_FILENO);
 		return (1);
-	}else
-	{
-		print_stack(stack_a);
 	}
-
+	else if (check_duplicate_values(stack_a) == -1)
+	{
+		ft_putstr_fd("Error\n", STDERR_FILENO);
+		return (1);
+	}
+	else
+	{
+		assign_ascending_index(&stack_a);
+		if (is_sorted(&stack_a) != 1)
+		{
+			if (list_size(stack_a) <= 5)
+				sort_small_stack(&stack_a, &stack_b);
+			else
+				radix_sort(&stack_a, &stack_b);
+		}
+	}
 
 	clear_stack(&stack_a);
 	clear_stack(&stack_b);
