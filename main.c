@@ -6,7 +6,7 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 09:36:57 by frgutier          #+#    #+#             */
-/*   Updated: 2023/03/18 09:52:48 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/03/18 18:03:31 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,22 @@ static int	check_duplicate_values(t_list *head)
 				return (-1);
 		}
 		head = head->next;
+	}
+	return (1);
+}
+
+static int	is_number(char *str)
+{
+	int	i;
+
+	i = 0;
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	while (str[i])
+	{
+		if (!ft_isdigit(str[i]))
+			return (0);
+		i++;
 	}
 	return (1);
 }
@@ -71,7 +87,7 @@ static int	init_stack(int ac, char **av, t_list **a_stack)
 		while (split[j])
 		{
 			if (ft_atoi(split[j]) > INT_MAX
-				|| ft_atoi(split[j]) < INT_MIN)
+				|| ft_atoi(split[j]) < INT_MIN || !is_number(split[j]))
 				return (0);
 			list_append(a_stack, new_node(ft_atoi(split[j])));
 			j++;
