@@ -6,7 +6,7 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 09:36:57 by frgutier          #+#    #+#             */
-/*   Updated: 2023/03/19 13:04:30 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/03/19 13:42:58 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,15 +72,9 @@ int	main(int argc, char **argv)
 	stack_a = NULL;
 	stack_b = NULL;
 	if (init_stack(argc, argv, &stack_a) == 0)
-	{
-		ft_putstr_fd("Error\n", STDERR_FILENO);
-		return (1);
-	}
+		return (ft_putstr_fd("Error\n", STDERR_FILENO));
 	else if (check_duplicate_values(stack_a) == -1)
-	{
-		ft_putstr_fd("Error\n", STDERR_FILENO);
-		return (1);
-	}
+		return (ft_putstr_fd("Error\n", STDERR_FILENO));
 	else
 	{
 		assign_ascending_index(&stack_a);
