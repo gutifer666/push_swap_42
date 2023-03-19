@@ -6,14 +6,13 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 09:37:20 by frgutier          #+#    #+#             */
-/*   Updated: 2023/03/14 09:48:28 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/03/19 12:52:57 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 # include	"libft/libft.h"
-# include   <stdio.h>
 
 /*
 **  Lista doblemente enlazada
@@ -84,4 +83,10 @@ void	sort_small_stack(t_list **a_stack, t_list **b_stack);
 **  Funciones de ordenación de stacks grandes
 */
 void	radix_sort(t_list **a_stack, t_list **b_stack);
+
+/*
+**  Funciones checkers
+*/
+int		check_duplicate_values(t_list *stack);
+int		is_number(char *str);
 #endif

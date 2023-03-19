@@ -6,49 +6,13 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 09:36:57 by frgutier          #+#    #+#             */
-/*   Updated: 2023/03/19 10:29:02 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/03/19 13:04:30 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include    "push_swap.h"
 
-static int	check_duplicate_values(t_list *head)
-{
-	int		current_value;
-	t_list	*comparison_node;
-
-	while (head && head->next)
-	{
-		current_value = head->num;
-		comparison_node = head;
-		while (comparison_node->next)
-		{
-			comparison_node = comparison_node->next;
-			if (comparison_node->num == current_value)
-				return (-1);
-		}
-		head = head->next;
-	}
-	return (1);
-}
-
-static int	is_number(char *str)
-{
-	int	i;
-
-	i = 0;
-	if (str[i] == '-' || str[i] == '+')
-		i++;
-	while (str[i])
-	{
-		if (!ft_isdigit(str[i]))
-			return (0);
-		i++;
-	}
-	return (1);
-}
-
-void	free_split(char **split)
+static	void	free_split(char **split)
 {
 	int	i;
 
@@ -104,9 +68,7 @@ int	main(int argc, char **argv)
 	t_list	*stack_b;
 
 	if (argc == 1)
-	{
 		return (0);
-	}
 	stack_a = NULL;
 	stack_b = NULL;
 	if (init_stack(argc, argv, &stack_a) == 0)
