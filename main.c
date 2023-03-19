@@ -6,7 +6,7 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 09:36:57 by frgutier          #+#    #+#             */
-/*   Updated: 2023/03/19 10:18:28 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/03/19 10:29:02 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,8 +105,7 @@ int	main(int argc, char **argv)
 
 	if (argc == 1)
 	{
-		ft_putstr_fd("Error\n", 2);
-		return (1);
+		return (0);
 	}
 	stack_a = NULL;
 	stack_b = NULL;
@@ -131,7 +130,6 @@ int	main(int argc, char **argv)
 				radix_sort(&stack_a, &stack_b);
 		}
 	}
-	//system("leaks push_swap");
 	clear_stack(&stack_a);
 	clear_stack(&stack_b);
 	return (0);
