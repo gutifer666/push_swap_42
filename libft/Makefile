@@ -6,7 +6,7 @@
 #    By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/21 08:40:37 by frgutier          #+#    #+#              #
-#    Updated: 2022/12/20 09:02:25 by frgutier         ###   ########.fr        #
+#    Updated: 2023/03/19 10:03:26 by frgutier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ FLAGS	=	 -Werror -Wall -Wextra
 AR	=	 ar -rcs
 
 SRC = ft_atoi.c \
+		  ft_atol.c \
 		  ft_bzero.c \
 	      ft_calloc.c \
 		  ft_isalnum.c \

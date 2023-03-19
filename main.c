@@ -6,7 +6,7 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 09:36:57 by frgutier          #+#    #+#             */
-/*   Updated: 2023/03/18 18:03:31 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/03/19 10:18:28 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,8 +86,8 @@ static int	init_stack(int ac, char **av, t_list **a_stack)
 			return (0);
 		while (split[j])
 		{
-			if (ft_atoi(split[j]) > INT_MAX
-				|| ft_atoi(split[j]) < INT_MIN || !is_number(split[j]))
+			if (ft_atol(split[j]) > INT_MAX
+				|| ft_atol(split[j]) < INT_MIN || !is_number(split[j]))
 				return (0);
 			list_append(a_stack, new_node(ft_atoi(split[j])));
 			j++;
@@ -131,9 +131,8 @@ int	main(int argc, char **argv)
 				radix_sort(&stack_a, &stack_b);
 		}
 	}
-
+	//system("leaks push_swap");
 	clear_stack(&stack_a);
 	clear_stack(&stack_b);
-	//system("leaks push_swap");
 	return (0);
 }

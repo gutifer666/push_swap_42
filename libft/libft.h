@@ -6,7 +6,7 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 08:20:03 by frgutier          #+#    #+#             */
-/*   Updated: 2023/03/15 10:04:21 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/03/19 10:01:54 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ typedef struct s_list
 }					t_list;
 */
 
+long				ft_atol(const char *str);
 int					ft_atoi(const char *str);
 void				ft_bzero(void *s, size_t n);
 void				*ft_calloc(size_t count, size_t size);
@@ -74,7 +75,7 @@ void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
-*/ 
+*/
 
 int					print_char(int c);
 int					print_number(int n);
