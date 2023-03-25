@@ -6,7 +6,7 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 09:37:20 by frgutier          #+#    #+#             */
-/*   Updated: 2023/03/25 10:23:11 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/03/25 12:13:24 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,4 +90,6 @@ void	radix_sort(t_list **a_stack, t_list **b_stack);
 int		check_duplicate_values(t_list *stack);
 int		is_number(char *str);
 void	clear_stack(t_list **stack);
+int		clean_init(char **split, t_list **a_stack);
+void	free_split(char **split);
 #endif

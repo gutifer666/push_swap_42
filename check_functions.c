@@ -6,11 +6,25 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 12:41:09 by frgutier          #+#    #+#             */
-/*   Updated: 2023/03/25 10:31:17 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/03/25 12:13:10 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"push_swap.h"
+
+void	free_split(char **split)
+{
+	int	i;
+
+	i = 0;
+	while (split[i])
+	{
+		free(split[i]);
+		split[i] = NULL;
+		i++;
+	}
+	free(split);
+}
 
 void	clear_stack(t_list **stack)
 {
@@ -19,6 +33,13 @@ void	clear_stack(t_list **stack)
 	clear_stack(&(*stack)->next);
 	free(*stack);
 	*stack = NULL;
+}
+
+int	clean_init(char **split, t_list **a_stack)
+{
+	free_split(split);
+	clear_stack(a_stack);
+	return (0);
 }
 
 int	check_duplicate_values(t_list *head)
@@ -34,7 +55,7 @@ int	check_duplicate_values(t_list *head)
 		{
 			comparison_node = comparison_node->next;
 			if (comparison_node->num == current_value)
-			{
+			{				
 				return (-1);
 			}
 		}
