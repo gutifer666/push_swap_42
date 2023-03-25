@@ -6,7 +6,7 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 09:36:57 by frgutier          #+#    #+#             */
-/*   Updated: 2023/03/19 13:42:58 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/03/25 10:12:30 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,20 @@ static int	init_stack(int ac, char **av, t_list **a_stack)
 		j = 0;
 		split = ft_split(av[i], ' ');
 		if (!split[j])
+		{
+			free_split(split);
+			clear_stack(a_stack);
 			return (0);
+		}
 		while (split[j])
 		{
 			if (ft_atol(split[j]) > INT_MAX
 				|| ft_atol(split[j]) < INT_MIN || !is_number(split[j]))
-				return (0);
+				{
+					clear_stack(a_stack);
+					free_split(split);
+					return (0);
+				}
 			list_append(a_stack, new_node(ft_atoi(split[j])));
 			j++;
 		}
@@ -61,12 +69,21 @@ static int	init_stack(int ac, char **av, t_list **a_stack)
 	}
 	return (1);
 }
+/*
+** Memory leaks
+*/
+void check_memory_leaks() {
+    system("leaks push_swap");
+    exit(0);
+}
 
 int	main(int argc, char **argv)
 {
 	t_list	*stack_a;
 	t_list	*stack_b;
 
+	// Capturar la señal de finalización del programa
+	atexit(check_memory_leaks);
 	if (argc == 1)
 		return (0);
 	stack_a = NULL;
