@@ -6,7 +6,7 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 09:36:57 by frgutier          #+#    #+#             */
-/*   Updated: 2023/03/25 10:12:30 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/03/25 10:38:14 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,6 @@ static	void	free_split(char **split)
 		i++;
 	}
 	free(split);
-}
-
-static	void	clear_stack(t_list **stack)
-{
-	if (!stack || !(*stack))
-		return ;
-	clear_stack(&(*stack)->next);
-	free(*stack);
-	*stack = NULL;
 }
 
 static int	init_stack(int ac, char **av, t_list **a_stack)
@@ -91,7 +82,10 @@ int	main(int argc, char **argv)
 	if (init_stack(argc, argv, &stack_a) == 0)
 		return (ft_putstr_fd("Error\n", STDERR_FILENO));
 	else if (check_duplicate_values(stack_a) == -1)
+	{
+		clear_stack(&stack_a);
 		return (ft_putstr_fd("Error\n", STDERR_FILENO));
+	}
 	else
 	{
 		assign_ascending_index(&stack_a);

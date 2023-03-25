@@ -6,11 +6,20 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 12:41:09 by frgutier          #+#    #+#             */
-/*   Updated: 2023/03/25 10:15:55 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/03/25 10:31:17 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"push_swap.h"
+
+void	clear_stack(t_list **stack)
+{
+	if (!stack || !(*stack))
+		return ;
+	clear_stack(&(*stack)->next);
+	free(*stack);
+	*stack = NULL;
+}
 
 int	check_duplicate_values(t_list *head)
 {
@@ -25,7 +34,9 @@ int	check_duplicate_values(t_list *head)
 		{
 			comparison_node = comparison_node->next;
 			if (comparison_node->num == current_value)
+			{
 				return (-1);
+			}
 		}
 		head = head->next;
 	}
